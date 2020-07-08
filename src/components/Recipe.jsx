@@ -6,6 +6,10 @@ import Instructions from './Instructions';
 const Recipe = ({ name, ingredients, steps }) => (
   <section id={name.toLowerCase().replace(/ /g, '-')}>
     <h1>{name}</h1>
+    <p>
+      <span>{ingredients.length} Ingredients</span> |{' '}
+      <span>{steps.length} Steps</span>
+    </p>
     <IngredientsLis list={ingredients} />
     <Instructions
       title="Cooking Instructions"
