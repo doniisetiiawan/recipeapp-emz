@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Ingredient from './Ingredient';
 
-export const IngredientsList = ({ list }) => (
+export const IngredientsList = ({ list = [] }) => (
   <ul className="ingredients">
     {list.map((ingredient, i) => (
       <Ingredient key={i} {...ingredient} />

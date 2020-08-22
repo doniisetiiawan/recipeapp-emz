@@ -2,15 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import IngredientsLis from './IngredientsList';
 import Instructions from './Instructions';
+import IngredientsList from './IngredientsList';
 
-const Recipe = ({ name, ingredients, steps }) => (
+const Recipe = ({
+  name = 'untitled',
+  ingredients = [],
+  steps = [],
+}) => (
   <section id={name.toLowerCase().replace(/ /g, '-')}>
     <h1>{name}</h1>
-    <p>
-      <span>{ingredients.length} Ingredients</span> |{' '}
-      <span>{steps.length} Steps</span>
-    </p>
-    <IngredientsLis list={ingredients} />
+    <IngredientsList list={ingredients} />
     <Instructions
       title="Cooking Instructions"
       steps={steps}
